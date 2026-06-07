@@ -174,8 +174,11 @@ def load_data():
         return jsonify({"error": str(e)}), 500
 
 
-# ── Inicialização ─────────────────────────────────────────────────────────────
+# Carrega os embeddings no ChromaDB ao iniciar.
+# Executado aqui (nível de módulo) para funcionar tanto com
+# `python app.py` quanto com gunicorn (que não passa pelo bloco __main__).
+load_embeddings_to_chroma()
+
 if __name__ == "__main__":
-    load_embeddings_to_chroma()
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=os.getenv("FLASK_DEBUG", "false") == "true")
