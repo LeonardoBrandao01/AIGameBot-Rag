@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Ambiente e segredos
+.env
+*.env.local
+
+# ChromaDB (banco de vetores local — não commitar)
+chroma_db/
+
+# Embeddings (gerado localmente — opcional commitar)
+# Descomente se não quiser versionar:
+# backend/embeddings.json
+
+# Node / React
+node_modules/
+frontend/build/
+frontend/.pnp.*
+.yarn/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

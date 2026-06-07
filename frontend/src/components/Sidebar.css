@@ -1,0 +1,256 @@
+.sidebar {
+  width: 268px;
+  min-width: 268px;
+  height: 100vh;
+  background: var(--bg-soft);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gambot-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+.status-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.player-card {
+  background: var(--bg-card);
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.player-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.player-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.player-class {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.xp-section { margin-bottom: 1rem; }
+
+.xp-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.xp-bar-bg {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.xp-next {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  text-align: right;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.achievement.unlocked {
+  background: var(--accent-dim);
+  border-color: var(--border-mid);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.achievement.locked {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.ach-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--border-mid);
+}
+
+.achievement.unlocked .ach-dot {
+  background: var(--accent);
+}
+
+.ach-label { flex: 1; }
+
+.ach-lock {
+  font-size: 0.63rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sidebar-tip {
+  margin-top: auto;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.tip-text {
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  animation: fadein 0.4s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
